@@ -24,7 +24,7 @@ RUN apt-get update && \
 # locale
 ENV LANG=en_US.UTF-8 \
   LANGUAGE=en_US:en \
-  LC_ALL=en_US.UTF-8 \
+  LC_ALL=en_US.UTF-8
 
 COPY ./infra/docker/php/php-fpm.d/zzz-www.conf /usr/local/etc/php-fpm.d/zzz-www.conf
 COPY ./infra/docker/php/php.ini /usr/local/etc/php/php.ini

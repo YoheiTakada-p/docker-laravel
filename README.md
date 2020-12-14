@@ -11,6 +11,7 @@ AWS EC2
 1 80ポートを開放しよう
 ```bash
 $ sudo lsof -i :80 #確認
+$ sudo apachectl stop　#apacheを止めよう
 ```
 2 権限を付与しよう
 ```bash

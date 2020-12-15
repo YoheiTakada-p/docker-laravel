@@ -32,8 +32,8 @@ $ php artisan migrate
 $ yarn install
 $ yarn dev #すんごい時間かかるAWSじゃできない
 ```
-devでModule build failedエラー出たらもう一度devしよう
-多分ここら辺のエラー
+devでModule build failedエラー出たらもう一度devしよう  
+多分ここら辺のエラー  
 https://github.com/babel/babel/issues/8599  
 修正  
 ・EC2でphp/DockerfileのENVのlocale関係の位置をlocale-genの後に移動しエラーが出ないように変更  

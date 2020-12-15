@@ -4,6 +4,20 @@ build:
 	docker-compose build --no-cache --force-rm
 laravel-install:
 	docker-compose exec app composer create-project --prefer-dist laravel/laravel .
+laravel-install-6.x:
+	docker-compose exec app composer create-project --prefer-dist "laravel/laravel=6.*" .
+create-project-react1:
+	@make build
+	@make up
+	@make laravel-install-6.x
+	docker-compose exec app php artisan key:generate
+	docker-compose exec app php artisan storage:link
+	@make fresh
+create-project-react2:
+	docker-compose exec app composer require laravel/ui:^1.0 --dev
+	docker-compose exec app php artisan ui react --auth
+	docker-compose exec web yarn install
+	docker-compose exec web yarn dev
 create-project:
 	@make build
 	@make up

@@ -6,7 +6,7 @@ $ git clone <http/ssh>
 $ cd docker-laravel
 $ make create-project # a. 最新版で始める場合
 $ make create-project-6.x # b1. laravel6.xで始める場合
-$ make create-project-react # b2. laravel6.xにreactを入れた始める場合　※コンパイル遅すぎるからやめよう
+$ make create-project-react # b2. laravel6.xにreactを入れた始める場合
 $ make init # c. 既存のプロジェクトから始める場合
 ```
 b. AWS EC2の場合
@@ -45,13 +45,14 @@ $ composer require laravel/jetstream
 $ php artisan jetstream:install livewire
 $ php artisan migrate
 $ yarn install
-$ yarn dev #すんごい時間かかるAWSじゃできない
+$ yarn dev #すんごい時間かかるAWSじゃできない？
 ```
 注意  
 ローカルで $ docker-compose up でマウントできなかった時は再起動しよう  
 devでModule build failedエラー出たらもう一度devしよう  
 多分ここら辺のエラー  
 https://github.com/babel/babel/issues/8599  
+localdev.ymlは遅すぎるコンパイル対策  
 修正  
 ・EC2でphp/DockerfileのENVのlocale関係の位置をlocale-genの後に移動しエラーが出ないように変更  
 ・Makefile追加

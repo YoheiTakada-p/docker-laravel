@@ -6,7 +6,7 @@ $ git clone <http/ssh>
 $ cd docker-laravel
 $ make create-project # a. 最新版で始める場合
 $ make create-project-6.x # b1. laravel6.xで始める場合
-$ make create-project-react # b2. laravel6.xにreactを入れた始める場合
+$ make create-project-react # b2. laravel6.xにreactを入れた始める場合　※コンパイル遅すぎるからやめよう
 $ make init # c. 既存のプロジェクトから始める場合
 ```
 b. AWS EC2の場合

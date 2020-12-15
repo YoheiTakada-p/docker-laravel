@@ -33,7 +33,8 @@ $ sudo git clone <http/ssh>
 $ mv <http/ssh> backend
 $ sudo lsof -i :80 #確認
 $ sudo apachectl stop　#apacheを止めよう
-$ make init (or) make init-react 
+$ make init
+$ make init-yarn
 $ sudo chmod -R 777 backend/storage/ #権限付与
 $ sudo chmod -R 777 backend/bootstrap/cache/ #権限付与
 ```

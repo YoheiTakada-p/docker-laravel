@@ -147,4 +147,4 @@ ide-helper:
 	docker-compose exec app php artisan ide-helper:meta
 	docker-compose exec app php artisan ide-helper:models --nowrite
 watch:
-	docker-compose exec web yarn run watch
+	docker-compose exec web yarn run watch-poll

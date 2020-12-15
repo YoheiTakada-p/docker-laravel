@@ -25,6 +25,7 @@ Tailwind
 ```bash
 $ yarn add -D tailwindcss
 $ yarn tailwindcss init
+
 // webpack.mix.js
 const mix = require('laravel-mix');
 + const tailwindcss = require('tailwindcss');
@@ -35,11 +36,10 @@ const mix = require('laravel-mix');
 +        processCssUrls: false,
 +        postCss: [ tailwindcss('./tailwind.config.js') ],
 +    });
+
 $ yarn dev
 ```
-注意  
-ローカルで $ docker-compose up でマウントできなかった時は再起動しよう  
-jetstreamをインストールする場合はyarnで入れよう  
+jetstream  
 ```bash
 $ composer require laravel/jetstream
 $ php artisan jetstream:install livewire
@@ -47,6 +47,8 @@ $ php artisan migrate
 $ yarn install
 $ yarn dev #すんごい時間かかるAWSじゃできない
 ```
+注意  
+ローカルで $ docker-compose up でマウントできなかった時は再起動しよう  
 devでModule build failedエラー出たらもう一度devしよう  
 多分ここら辺のエラー  
 https://github.com/babel/babel/issues/8599  

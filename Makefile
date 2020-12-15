@@ -18,13 +18,16 @@ create-project-react:
 	docker-compose exec app php artisan ui react --auth
 	docker-compose exec web yarn install
 	docker-compose exec web yarn dev
-init-react:
+init:
 	docker-compose up -d --build
 	docker-compose exec app composer install
 	docker-compose exec app cp .env.example .env
 	docker-compose exec app php artisan key:generate
 	docker-compose exec app php artisan storage:link
 	@make fresh
+init-yarn:
+	docker-compose exec web yarn install
+	docker-compose exec web yarn dev
 create-project:
 	@make build
 	@make up
@@ -40,13 +43,6 @@ install-recommend-packages:
 	docker-compose exec app composer require --dev roave/security-advisories:dev-master
 	docker-compose exec app php artisan vendor:publish --provider="BeyondCode\DumpServer\DumpServerServiceProvider"
 	docker-compose exec app php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"
-init:
-	docker-compose up -d --build
-	docker-compose exec app composer install
-	docker-compose exec app cp .env.example .env
-	docker-compose exec app php artisan key:generate
-	docker-compose exec app php artisan storage:link
-	@make fresh
 remake:
 	@make destroy
 	@make init

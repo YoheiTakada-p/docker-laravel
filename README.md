@@ -22,7 +22,7 @@ $ git clone <http/ssh>
 $ cd docker-laravel
 $ make create-project # a. 最新版で始める場合
 $ make create-project-6.x # b1. laravel6.xで始める場合
-$ make create-project-react # b2. laravel6.xにreactを入れた始める場合
+$ make create-project-react # b2. laravel6.xにreactを入れて始める場合
 $ make init # c. 既存のプロジェクトから始める場合
 ```
 b. AWS EC2の場合
@@ -38,7 +38,7 @@ $ make init-yarn
 $ sudo chmod -R 777 backend/storage/ #権限付与
 $ sudo chmod -R 777 backend/bootstrap/cache/ #権限付与
 ```
-Tailwind ※EC2じゃだめでした(泣)CDNで我慢しよう  
+Tailwind ※EC2じゃだめだった(泣)CDNで我慢  
 https://tailwindcss.com/docs/guides/laravel
 ```bash
 $ yarn add -D tailwindcss@npm:@tailwindcss/postcss7-compat @tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
@@ -75,7 +75,7 @@ $ yarn dev #すんごい時間かかるAWSじゃできない？
 devでModule build failedエラー出たらもう一度devしよう  
 多分ここら辺のエラー  
 https://github.com/babel/babel/issues/8599  
-localdev.ymlは遅すぎるコンパイル対策  
+deploy.ymlは遅すぎるコンパイル対策  
 修正  
 ・EC2でphp/DockerfileのENVのlocale関係の位置をlocale-genの後に移動しエラーが出ないように変更  
 ・Makefile追加

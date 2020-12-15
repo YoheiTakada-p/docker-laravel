@@ -38,7 +38,7 @@ $ make init-yarn
 $ sudo chmod -R 777 backend/storage/ #権限付与
 $ sudo chmod -R 777 backend/bootstrap/cache/ #権限付与
 ```
-Tailwind ※EC2じゃだめでした(泣)CDNで我慢します
+Tailwind ※EC2じゃだめでした(泣)CDNで我慢しよう  
 https://tailwindcss.com/docs/guides/laravel
 ```bash
 $ yarn add -D tailwindcss@npm:@tailwindcss/postcss7-compat @tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9

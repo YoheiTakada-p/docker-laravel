@@ -37,6 +37,11 @@ const mix = require('laravel-mix');
 +        postCss: [ tailwindcss('./tailwind.config.js') ],
 +    });
 
+//sass/app.sass
++ @tailwind base;
++ @tailwind components;
++ @tailwind utilities;
+
 $ yarn dev
 ```
 jetstream  

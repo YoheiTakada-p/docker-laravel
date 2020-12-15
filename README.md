@@ -31,7 +31,7 @@ b. AWS EC2の場合
 $ sudo git clone <http/ssh>
 $ cd docker-laravel
 $ sudo git clone <http/ssh>
-$ mv <http/ssh> backend
+$ sudo mv <http/ssh> backend
 $ sudo lsof -i :80 #確認
 $ sudo apachectl stop　#apacheを止めよう
 $ make init

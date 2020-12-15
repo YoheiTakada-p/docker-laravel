@@ -6,18 +6,25 @@ laravel-install:
 	docker-compose exec app composer create-project --prefer-dist laravel/laravel .
 laravel-install-6.x:
 	docker-compose exec app composer create-project --prefer-dist "laravel/laravel=6.*" .
-create-project-react1:
+create-project-6.x:
 	@make build
 	@make up
 	@make laravel-install-6.x
 	docker-compose exec app php artisan key:generate
 	docker-compose exec app php artisan storage:link
 	@make fresh
-create-project-react2:
+create-project-react:
 	docker-compose exec app composer require laravel/ui:^1.0 --dev
 	docker-compose exec app php artisan ui react --auth
 	docker-compose exec web yarn install
 	docker-compose exec web yarn dev
+init-react:
+	docker-compose up -d --build
+	docker-compose exec app composer install
+	docker-compose exec app cp .env.example .env
+	docker-compose exec app php artisan key:generate
+	docker-compose exec app php artisan storage:link
+	@make fresh
 create-project:
 	@make build
 	@make up
@@ -54,6 +61,8 @@ destroy:
 	docker-compose down --rmi all --volumes --remove-orphans
 destroy-volumes:
 	docker-compose down --volumes --remove-orphans
+destroy-images:
+	docker images -aq | xargs docker rmi
 ps:
 	docker-compose ps
 logs:

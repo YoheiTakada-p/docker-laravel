@@ -22,8 +22,9 @@ $ sudo chmod -R 777 backend/storage/ #権限付与
 $ sudo chmod -R 777 backend/bootstrap/cache/ #権限付与
 ```
 Tailwind  
+https://tailwindcss.com/docs/guides/laravel
 ```bash
-$ yarn add -D tailwindcss
+$ yarn add -D tailwindcss@npm:@tailwindcss/postcss7-compat @tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
 $ yarn tailwindcss init
 
 // webpack.mix.js

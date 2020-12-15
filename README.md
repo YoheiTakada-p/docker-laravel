@@ -21,7 +21,22 @@ $ make init (or) make init-react
 $ sudo chmod -R 777 backend/storage/ #権限付与
 $ sudo chmod -R 777 backend/bootstrap/cache/ #権限付与
 ```
+Tailwind  
+```bash
+$ yarn add -D tailwindcss
+$ yarn tailwindcss init
+// webpack.mix.js
+const mix = require('laravel-mix');
++ const tailwindcss = require('tailwindcss');
 
+ mix.js('resources/js/app.js', 'public/js')
+     .sass('resources/sass/app.scss', 'public/css')
++    .options({
++        processCssUrls: false,
++        postCss: [ tailwindcss('./tailwind.config.js') ],
++    });
+$ yarn dev
+```
 注意  
 ローカルで $ docker-compose up でマウントできなかった時は再起動しよう  
 jetstreamをインストールする場合はyarnで入れよう  

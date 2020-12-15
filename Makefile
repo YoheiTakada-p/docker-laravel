@@ -14,7 +14,7 @@ create-project-6.x:
 	docker-compose exec app php artisan storage:link
 	@make fresh
 create-project-react:
-	docker-compose exec app composer require laravel/ui:^1.0 --dev
+	docker-compose exec app composer require laravel/ui "1.x" --dev
 	docker-compose exec app php artisan ui react --auth
 	docker-compose exec web yarn install
 	docker-compose exec web yarn dev

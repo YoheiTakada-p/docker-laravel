@@ -74,7 +74,7 @@ $ yarn dev #すんごい時間かかるAWSじゃできない？
 注意  
 ローカルで $ docker-compose up でマウントできなかった時は再起動しよう  
 devでModule build failedエラー出たらもう一度devしよう  
-docker-compose.ymlでDB_CONNECTIONなどのenv設定しているのでphpunitで接続先切り替えられなくて困るかも
+docker-compose.ymlでDB_CONNECTIONなどのenv設定しており、envファイルよりも優先されるのでphpunitで接続先切り替えられなくて困るかも  
 多分ここら辺のエラー  
 https://github.com/babel/babel/issues/8599  
 deploy.ymlは遅すぎるコンパイル対策  
